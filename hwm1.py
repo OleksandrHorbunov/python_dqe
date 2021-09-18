@@ -42,5 +42,16 @@ for i in sorted_list:
         odd_count += 1  # increase odd count
 
 # Print out averages for even and odd numbers
-print("Even Average: " + str(int(even_sum) / int(even_count)))
-print("Odd Average: " + str(int(odd_sum) / int(odd_count)))
+result_message = "{0} Average: {1}"
+# Check if even_count equal 0
+if (even_count == 0):
+    # Print appropriate messages
+    print(result_message.format("Even", 0))
+    print("no even numbers...")
+else:
+    print(result_message.format("Even", even_sum / even_count))
+if (odd_count == 0):
+    print(result_message.format("Odd", 0))
+    print("no odd numbers...")
+else:
+    print(result_message.format("Odd", odd_sum / odd_count))
