@@ -2,6 +2,7 @@
 import random
 import string
 
+
 # create a list of random number of dicts (from 2 to 10)
 def get_dicts(number_dicts):
     dict_list = []                                              # Create empty list
@@ -35,11 +36,11 @@ def get_common_dict(dicts):
     print("Common dict with the biggest value for key\n",
           res)                                             # Print common dict
     print("Auxiliary dict\n", res1)                        # Print auxiliary dict
-
     for k in res1.keys():                                  # Go through auxiliary dict
         new_key = k + "_" + str(res1[k])                   # Create a new key
         res[new_key] = res.pop(k)                          # Create a new key in final dict with value
     print("Final dict with new keys\n", res)               # Print final dict with updated keys
+    return res
 
 
 if __name__ == "__main__":
