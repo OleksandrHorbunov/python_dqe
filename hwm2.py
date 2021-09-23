@@ -9,7 +9,7 @@ def get_dicts(number_dicts):
     #   number_dicts (int):  random number of dicts in a list
     dict_list = []
     for i in range(number_dicts):
-        number = random.randint(1, number_dicts)            # Dict size
+        number = random.randint(1, 26)            # Dict size
         key_list = []
         key_counter = 0
         while key_counter < number:                         # Check for letter duplicates
@@ -26,7 +26,7 @@ def get_dicts(number_dicts):
                 value_counter += 1
         dictionary = dict(zip(key_list, value_list))            # Creating a dict
         dict_list.append(dictionary)                            # Adding a dict to a list
-    print("List of dicts\n", dict_list)
+    #print("List of dicts\n", dict_list)
     return dict_list
 
 
@@ -54,11 +54,15 @@ def get_common_dict(dicts):
     for aux_key in dict_aux.keys():     # Changing key to new key with suffix of dict number
         new_key = aux_key + "_" + str(dict_aux[aux_key])
         res[new_key] = res.pop(aux_key)
-    print("Common dict\n", res)
+    #print("Common dict\n", res)
+    return res
 
 
 if __name__ == "__main__":
     # Generate random number of dicts
     number_dicts = random.randint(2, 10)
     g_dict_list = get_dicts(number_dicts)
-    get_common_dict(g_dict_list)
+    g_dict_common = get_common_dict(g_dict_list)
+    print("List of dicts\n", g_dict_list)
+    print("Common dict\n", g_dict_common)
+
