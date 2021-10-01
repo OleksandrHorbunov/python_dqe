@@ -14,6 +14,10 @@ text = """homEwork:
 
 
 def resultoutput(str_message, str_output):
+    """Returns formatted message
+       Parameters:
+       str_message, str_output (str)
+    """
     print(f"{str_message}:\n {str_output}")
 
 
@@ -27,10 +31,10 @@ if __name__ == "__main__":
     print("Common dict\n", g_dict_common)
     # <----------------------------------------------------------------------------->
     print("\nModule 3: string object\n-----------------------")
-    resultoutput("Normalized text", m3stringobject.text_normalize(m3stringobject.text_split(text)))
+    #resultoutput("Normalized text", m3stringobject.text_normalize(m3stringobject.text_split(text)))
     text_normalizing = m3stringobject.text_normalize(m3stringobject.text_split(text))
     extended_sentense = m3stringobject.more_setences(text_normalizing)
-    resultoutput("Extended sentences", m3stringobject.more_setences(text_normalizing))
-    resultoutput("Corrected spelling", m3stringobject.text_misspell(extended_sentense))
+    #resultoutput("Extended sentences", m3stringobject.more_setences(text_normalizing))
+    #resultoutput("Corrected spelling", m3stringobject.text_misspell(extended_sentense))
     misspell_sentences = m3stringobject.text_misspell(extended_sentense)
     m3stringobject.count_whitespaces(misspell_sentences)

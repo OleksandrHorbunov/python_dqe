@@ -1,11 +1,12 @@
-import string
 import random
+import string
+
 
 def get_dicts(number_dicts):
-    # Return a list of random number of dicts (from 2 to 10)
-
-    # Parametrs:
-    #   number_dicts (int):  random number of dicts in a list
+    """Return a list of random number of dicts (from 2 to 10)
+       Parametrs:
+       number_dicts (int):  random number of dicts in a list
+    """
     dict_list = []
     for i in range(number_dicts):
         number = random.randint(1, 26)            # Dict size
@@ -31,10 +32,10 @@ def get_dicts(number_dicts):
 
 # create one common dict
 def get_common_dict(dicts):
-    # Return one common dict
-
-    # Parametrs:
-    #   dicts (list): get generated list of dicts
+    """Return one common dict
+       Parametrs:
+       dicts (list): get generated list of dicts
+    """
     res = {}
     dict_aux = {}       # Creating auxiliary dict to keep key and num of dict
     for dict_order in range(len(dicts)):        # Go through the list of dicts
@@ -55,5 +56,3 @@ def get_common_dict(dicts):
         res[new_key] = res.pop(aux_key)
     #print("Common dict\n", res)
     return res
-
-
