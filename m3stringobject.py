@@ -34,10 +34,19 @@ def text_normalize(text_norm):
                 text_norm[text_sentence] = text_norm[text_sentence].strip()
                 text_norm[text_sentence] = "\t" + text_norm[text_sentence]
             else:
-                text_norm[text_sentence] = text_norm[text_sentence].strip()
+                text_norm[text_sentence] = text_norm[text_sentence].strip().capitalize()
                 text_norm[text_sentence] = "\t" + text_norm[text_sentence]
         else:
-            text_norm[text_sentence] = text_norm[text_sentence].capitalize()
+            if text_norm[text_sentence].count(".") > 0:
+                sentence_splited = text_norm[text_sentence].split(".")
+                for i in range(len(sentence_splited)):
+                    if sentence_splited[i] != " " and sentence_splited[i] != "":
+                        sentence_splited[i] = sentence_splited[i].strip().capitalize() + "."
+                text_norm[text_sentence] = ' '.join(sentence_splited)
+                text_norm[text_sentence] = text_norm[text_sentence].strip().replace(". .", ".")
+            else:
+                text_norm[text_sentence] = text_norm[text_sentence].strip().lower()
+                text_norm[text_sentence] = text_norm[text_sentence].capitalize()
     return text_norm
 
 
