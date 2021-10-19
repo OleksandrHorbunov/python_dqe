@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<data>
+    <type name="News">
+        <city>Lviv</city>
+        <message>customers migrating their on-premises data warehouse. soluTions that automate the tasks</message>
+    </type>
+    <type name="Advert">
+        <expdate>01/12/2021</expdate>
+        <message>building on platform with $300 in free credits and 20+ always free products.</message>
+    </type>
+    <type name="Joke">
+        <message>monsters good at math. not unless you count dragon</message>
+    </type>
+</data>
